@@ -10,14 +10,14 @@ const error = chalk.bold.red;
 const success = chalk.keyword("green");
 var urls=[];
 var lineReader = require('readline').createInterface({
-  input: require('fs').createReadStream('moviename.csv')
+  input: require('fs').createReadStream('BollywoodMovieDetail.csv')
 });
 
 lineReader.on('line', function (line) {
   var s = line.split(',"');
       if(s[1]!=undefined)
       {
-          s1 = s[1].split('",');
+          s1 = s[1].split('"');
           console.log(s1[0]);
           urls.push(s1[0]);
        }
@@ -49,8 +49,8 @@ var movieq,dir,loc,url,base;
     for (let i = 0; i < urls.length; i++) {
       url = urls[i];
       base="https://www.google.com/search?q=";
-        dir = "movie/"
-        movieq = base + url;
+        dir = "bollymovie/"
+        movieq = base + url + " movie";
         loc = dir + url +".json";
         //console.log(loc);
 

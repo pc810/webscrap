@@ -57,9 +57,9 @@ fs.readdir(directoryPath, function (err, files) {
              rjson = JSON.stringify(filerev);
              
 
-             console.log(rjson);
+             console.log(rjson.length);
              
-             if (rjson.length != 0) {
+             if (rjson.length != 2) {
                  console.log(fileSavePath);
                 fs.writeFileSync(fileSavePath, rjson, 'utf8', function (err, data) {
                   if (err) {

@@ -27,7 +27,7 @@ fs.readdir(directoryPath, function (err, files) {
              }
              var corpus = new tm.Corpus(revtext);
             revtext = [];
-             filteredreview = corpus.trim().toLower().clean().removeInterpunctuation().removeNewlines().removeDigits().removeWords( tm.STOPWORDS.EN ).stem("Porter");
+             filteredreview = corpus.trim().toLower().clean().removeInterpunctuation().removeNewlines().removeDigits().removeWords( tm.STOPWORDS.EN );
              //var terms = new tm.DocumentTermMatrix(filteredreview);
              //console.log(filteredreview);
              var fileSavePath = savebase + file;
